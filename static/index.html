@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe4">
+  <title>Vaani - is this bank message real?</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/" aria-label="Vaani home">
+      <span class="brand-name">vaani</span>
+      <span class="brand-sub">&#2357;&#2366;&#2339;&#2368; &middot; &#2613;&#2622;&#2595;&#2624;</span>
+    </a>
+    <button id="lang-btn" class="lang-btn" type="button">Language</button>
+  </header>
+
+  <!-- first run: pick the way you speak -->
+  <section id="pick" class="screen" hidden>
+    <h1 data-t="choose_language">Choose the way you speak</h1>
+    <p class="hint" data-t="choose_hint">Tap to hear it. Pick the one that sounds like home.</p>
+    <ul id="dialect-list" class="dialects"></ul>
+  </section>
+
+  <main id="main" class="screen" hidden>
+    <h1 class="tagline" data-t="tagline">Is this bank message real?</h1>
+
+    <div class="box">
+      <label for="msg" class="label" data-t="paste_label">The bank message</label>
+      <textarea id="msg" rows="5" data-t-placeholder="paste_hint" placeholder="Paste the SMS here"></textarea>
+
+      <div class="row">
+        <label class="btn btn-plain file-btn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span data-t="photo_btn">Photo of message</span>
+          <input id="photo" type="file" accept="image/*">
+        </label>
+        <button id="paste-btn" class="btn btn-plain" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="12" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 4h6v3H9z" fill="currentColor"/></svg>
+          <span data-t="paste">Paste</span>
+        </button>
+      </div>
+      <p id="photo-status" class="small" hidden></p>
+      <img id="photo-preview" class="preview" alt="" hidden>
+
+      <details class="sender">
+        <summary data-t="sender_label">Who sent it? (optional)</summary>
+        <input id="sender" type="text" autocomplete="off" data-t-placeholder="sender_hint" placeholder="e.g. JD-SBIINB-S">
+      </details>
+    </div>
+
+    <div class="ask">
+      <button id="mic" class="mic" type="button" aria-label="Hold and ask">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8.5 21h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <div>
+        <p class="ask-label" id="mic-label" data-t="ask_btn">Hold and ask</p>
+        <p class="small" id="heard" hidden></p>
+      </div>
+    </div>
+
+    <button id="check-btn" class="btn btn-go" type="button" data-t="check_btn">Check</button>
+
+    <section id="result" hidden aria-live="polite"></section>
+  </main>
+
+  <section id="clicked" class="clicked" hidden aria-live="assertive"></section>
+
+  <footer class="bottom">
+    <button id="clicked-btn" class="btn btn-alarm" type="button" data-t="clicked_btn">Already clicked a link or shared OTP?</button>
+    <p class="fine"><span data-t="footer">Vaani never asks for your OTP, PIN or password.</span> <a href="/sources.html">What we check against</a> &middot; TEAM404</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

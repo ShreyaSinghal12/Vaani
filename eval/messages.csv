@@ -1,0 +1,47 @@
+id,label,source,sender,bank,type,text,notes
+m001,real,synthetic,AD-INDBNK-S,indianbank,rekyc,"Dear Customer, your KYC is due for periodic update. If there is no change, send SMS REKYC NOCHANGE <CIF> to 9677633000 or visit https://apps.indianbank.in/Rekyc/rekyc.aspx - Indian Bank",
+m002,real,synthetic,JD-SBIINB-T,sbi,transaction,"Rs 2,450.00 debited from A/c XX4521 on 29-09-26 for UPI/P2M. Not you? Call 1800 1234 - SBI",
+m003,real,synthetic,VM-HDFCBK-T,hdfc,otp_info,123456 is your OTP for txn of Rs 500 at Amazon. Do not share it with anyone. HDFC Bank,
+m004,real,synthetic,AX-HDFCBK-S,hdfc,mandate_fail,"HDFC Bank: Your NACH mandate for Rs 3,200 failed due to insufficient balance on 28-09. Please keep sufficient balance.",
+m005,real,synthetic,BP-ICICIB-T,icici,transaction,"ICICI Bank Acct XX901 credited with Rs 15,000.00 on 27-Sep-26; IMPS. Avl Bal Rs 18,442.10",
+m006,real,synthetic,VK-PNBSMS-S,pnb,payment_due,"PNB: EMI of Rs 4,850 for loan a/c XX7710 is due on 05-10-2026. Please keep balance in your account.",
+m007,real,synthetic,JM-SBIPSG-S,sbi,card_blocked,Your SBI Debit Card ending 4411 has been blocked as requested. For help call 1800 1234.,
+m008,real,synthetic,,sbi,otp_info,OTP for your YONO login is 482913. SBI never asks for OTP. Do not share it with anyone.,no sender given
+m009,real,synthetic,AD-ICICIT-T,icici,otp_info,"Never share OTP/password with anyone. 557201 is OTP for ICICI Bank credit card XX09 transaction of Rs 1,299.",
+m010,real,synthetic,,hdfc,payment_due,"HDFC Bank Credit Card XX1122: Total amount due Rs 6,210.55, minimum due Rs 310. Pay by 12-10-2026 via hdfc.bank.in or NetBanking.",official .bank.in link
+m011,real,synthetic,TX-SBIINB-S,sbi,rekyc,"Dear customer, your KYC update is pending. Please visit your home branch with Aadhaar and PAN or update through YONO. SBI will never ask for OTP.",
+m012,real,synthetic,AD-INDBNK-T,indianbank,transaction,Indian Bank: A/c XX3321 debited Rs 800.00 on 26/09/26 by ATM withdrawal. Not you? Call 18004250000,
+m013,real,synthetic,VM-PNBSMS-T,pnb,transaction,"Your A/c XX2210 is credited by Rs 6,000.00 on 25-09-26 (PM-KISAN). -PNB",
+m014,real,synthetic,,icici,payment_due,"Dear Customer, EMI of Rs 2,199 for your ICICI Bank loan will be auto debited on 07-Oct. Keep sufficient balance. Details: icici.bank.in",official .bank.in link
+m015,real,synthetic,JD-HDFCBK-S,hdfc,mandate_fail,Auto-debit of Rs 999 for your insurance premium could not be processed from HDFC Bank a/c XX45 due to insufficient funds.,
+m016,real,synthetic,AD-SBIUPI-T,sbi,transaction,Dear UPI user A/C X4521 debited by 120.0 on date 29Sep26 trf to KIRANA STORE Refno 427312. If not u? call 1800111109. -SBI,
+m017,real,synthetic,,unknown,transaction,"Punjab Gramin Bank: A/c XX8812 credited Rs 3,500 on 24-09-2026. Avl bal Rs 9,120.",bank not in registry; expected not_sure
+m018,real,synthetic,VK-ICICIB-S,icici,card_blocked,Your ICICI Bank Credit Card XX5543 is temporarily blocked due to 3 wrong PIN attempts. It will be unblocked automatically after 24 hours.,
+m019,real,synthetic,,indianbank,rekyc,Indian Bank: Periodic KYC updation is due for your account. You may update at your branch or via https://apps.indianbank.in/Rekyc/rekyc.aspx,
+m020,real,synthetic,JD-PNBSMS-T,pnb,otp_info,219034 is the OTP for your PNB ONE login. PNB never asks for OTP. Do not share.,
+m021,fake,synthetic,,indianbank,rekyc,"Dear Customer, your Indian Bank KYC expires today. Update now at indianbank-kyc.in or your account will be blocked.",
+m022,fake,synthetic,9876543210,sbi,rekyc,Your SBI YONO account will be blocked today. Update PAN at http://bit.ly/sbi-pan,
+m023,fake,synthetic,,icici,card_blocked,Dear customer your ICICI credit card is blocked. Call 9123456780 immediately to unblock,
+m024,fake,synthetic,,pnb,reward,Congratulations! You have won Rs 5000 cashback from PNB. Claim now at pnb-rewards.xyz,
+m025,fake,synthetic,,sbi,rekyc,"Hello, please install AnyDesk so our executive can help complete your KYC. SBI support",
+m026,fake,synthetic,,hdfc,reward,"HDFC Bank: Your 7,450 reward points expire today. Redeem now: hdfc-rewardz.com/redeem",
+m027,fake,synthetic,+917065432198,sbi,rekyc,SBI: Your account is suspended due to incomplete KYC. Click http://sbi-kycupdate.online to activate within 24 hours.,
+m028,fake,synthetic,,sbi,rekyc,"Dear SBI customer, your YONO account will be blocked today. Please update your PAN card: https://yono-sbi.site/login",
+m029,fake,synthetic,,unknown,reward,"Income tax refund of Rs 15,490 approved. Submit your account details at incometax-refund.info to receive it.",
+m030,fake,synthetic,,unknown,otp_info,"Hi, I sent you an OTP by mistake. Please tell the OTP, it is for my recharge.","asks for otp, no bank"
+m031,fake,synthetic,,hdfc,card_blocked,HDFC Bank ALERT: Your debit card will be blocked in 24 hours. Share the OTP received to verify your card.,
+m032,fake,synthetic,,icici,rekyc,ICICI Bank: KYC pending. Download our KYC app from icici-kyc.app/ICICI_KYC.apk to avoid account closure.,
+m033,fake,synthetic,,pnb,rekyc,PNB: Your a/c will be deactivated tonight. Update KYC now at tinyurl.com/pnb-kyc-update,
+m034,fake,synthetic,,indianbank,card_blocked,Indian Bank: Your ATM card is blocked. Contact our officer on WhatsApp 8899001122 to unblock immediately.,
+m035,fake,synthetic,,unknown,reward,"Dear customer, electricity connection will be cut tonight at 9.30 pm. Call officer 9812345678 immediately.",not a bank; urgency + mobile
+m036,fake,synthetic,,sbi,transaction,"SBI: Rs 49,999 debited from your a/c. If not done by you, click secure-sbi-help.com to cancel the transaction.",
+m037,fake,synthetic,,hdfc,rekyc,Dear HDFC customer your netbanking will be blocked. Please update PAN: hdfcbank-verify.co.in,
+m038,fake,synthetic,,sbi,reward,"SBI Reward: Your SBI credit card points worth Rs 9,870 expire today. Claim at sbi-cardrewards.top",
+m039,fake,synthetic,,icici,transaction,"You have received Rs 2,000 from ICICI. Enter your UPI PIN to receive money.",
+m040,fake,synthetic,AD-SBIINB-P,sbi,rekyc,Complete your KYC today or your SBI account will be blocked. Visit sbi-kyc.xyz,promo header + lookalike
+m041,fake,synthetic,,unknown,reward,You have won a lottery of Rs 25 lakh from KBC. Contact Rana Pratap on 7004512345 to claim.,
+m042,fake,synthetic,,pnb,rekyc,Punjab National Bank: aapka KYC aaj band ho jayega. Turant update karein: pnb.kyc-online.in,
+m043,fake,synthetic,,sbi,card_blocked,SBI: aapka ATM card block ho gaya hai. OTP bataye aur card chalu karwaye. Call 9001234567,
+m044,fake,synthetic,,indianbank,rekyc,Indian Bank KYC update ke liye screen share karein. Hamara agent aapki madad karega. Download QuickSupport.,
+m045,fake,synthetic,,hdfc,transaction,"HDFC: Rs 10,000 credited by mistake to your account. Please return it by clicking hdfc-refund.link",
+m046,fake,synthetic,,icici,rekyc,ICICI Bank: Your KYC has expired. Update now on www.icicibank-kycupdate.com or card will be blocked.,

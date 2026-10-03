@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaani - what we check against</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; background: var(--card); }
+    th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); }
+    th { font-size: .8rem; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+    .bank { margin-bottom: 22px; border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .bank h2 { margin: 0; padding: 10px 12px; background: #ebe4d4; font-size: 1.1rem; }
+    .warn { color: var(--unsure); font-size: .85rem; }
+    body { padding-bottom: 40px; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><span class="brand-name">vaani</span></a>
+    <a href="/">Back</a>
+  </header>
+  <h1>What we check against</h1>
+  <p>Vaani does not guess from the wording of a message. It compares the message with this list of each bank's official websites, SMS sender names and helplines. Every entry has the page we took it from and the date we checked it.</p>
+  <p class="small">Entries marked "to confirm" came from a secondary source or from real messages on our own phones. We confirm them on the bank's own site before relying on them.</p>
+  <h2>Models we use</h2>
+  <table id="models"><tr><td class="small">Loading...</td></tr></table>
+  <p class="small">The verdict (Real / Fake / Not sure) always comes from fixed rules. The models read, listen, speak and add warning signs; none of them can call a message Real on its own.</p>
+
+  <h2>Bank records</h2>
+  <div id="list"><p class="small">Loading...</p></div>
+
+  <script>
+    fetch("/api/models").then(function (r) { return r.json(); }).then(function (m) {
+      var c = m.scam_classifier;
+      var rows = [
+        ["Speech to text", m.speech_to_text],
+        ["Voice replies", m.text_to_speech],
+        ["Reading messages and screenshots", m.reading_and_screenshots],
+        ["Follow-up questions", m.follow_up_answers],
+        ["Scam-SMS classifier", c ? c.name + ", trained on " + c.trained_on.public + " real messages from public Kaggle datasets + " + c.trained_on.india_synthetic + " Indian templates. Held-out F1 " + c.held_out_f1 + ", ROC AUC " + c.held_out_roc_auc + " on " + c.test_rows + " messages." : "not loaded"],
+        ["Verdict", m.verdict]
+      ];
+      document.getElementById("models").innerHTML = rows.map(function (r) { return "<tr><th>" + r[0] + "</th><td>" + r[1] + "</td></tr>"; }).join("");
+    });
+
+    fetch("/api/banks").then(function (r) { return r.json(); }).then(function (data) {
+      var html = "";
+      data.banks.forEach(function (b) {
+        html += '<section class="bank"><h2>' + b.name + '</h2><table>' +
+          '<tr><th>Official websites</th><td>' + b.domains.join("<br>") + '</td></tr>' +
+          '<tr><th>SMS sender names</th><td>' + b.sender_codes.join(", ") + '</td></tr>' +
+          '<tr><th>Helpline</th><td>' + b.helpline + (b.helpline_verified ? "" : ' <span class="warn">(to confirm)</span>') + '</td></tr>' +
+          '<tr><th>Source</th><td>' + b.sources.map(function (s) { return '<a href="' + s + '" target="_blank" rel="noopener">' + s + '</a>'; }).join("<br>") + '</td></tr>' +
+          '<tr><th>Checked on</th><td>' + b.checked_on + '</td></tr>' +
+          '</table></section>';
+      });
+      html += '<p>National cyber crime helpline: <strong>' + data.national.cyber_helpline + '</strong>, portal: <a href="' + data.national.cyber_portal + '">' + data.national.cyber_portal + '</a></p>';
+      document.getElementById("list").innerHTML = html;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+vaani.db
+.venv/
+venv/
+.pytest_cache/
+eval/results/
+eval/clips/*.webm
+eval/clips/*.wav
+eval/clips/*.mp3

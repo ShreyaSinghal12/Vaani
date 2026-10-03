@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "id": "en",
+    "name": "English",
+    "native_name": "English",
+    "script": "Latin",
+    "speech_lang": "en-IN",
+    "tts_lang": "en-IN",
+    "greeting": "Hello. Send me a bank message and I will tell you if it is real.",
+    "review": "team"
+  },
+  "ui": {
+    "tagline": "Is this bank message real?",
+    "choose_language": "Choose the way you speak",
+    "choose_hint": "Tap to hear it. Pick the one that sounds like home.",
+    "paste_label": "The bank message",
+    "paste_hint": "Paste the SMS here",
+    "sender_label": "Who sent it? (optional)",
+    "sender_hint": "e.g. JD-SBIINB-S or a phone number",
+    "photo_btn": "Photo of message",
+    "reading_photo": "Reading the photo...",
+    "ask_btn": "Hold and ask",
+    "listening": "Listening... let go when done",
+    "check_btn": "Check",
+    "checking": "Checking...",
+    "clicked_btn": "Already clicked a link or shared OTP?",
+    "how_checked": "How we checked",
+    "listen_again": "Listen again",
+    "send_sms": "Open SMS, ready to send",
+    "call_bank": "Call {bank}",
+    "open_site": "Open official page",
+    "wrong_answer": "This answer looks wrong",
+    "thanks": "Thanks. We will look at it.",
+    "new_check": "Check another message",
+    "you_said": "You asked",
+    "cif_prompt": "Your CIF / customer number (it is in your passbook)",
+    "not_verified_note": "We have not yet confirmed this step on the bank's website. Check once at the branch.",
+    "paste": "Paste",
+    "close": "Close",
+    "footer": "Vaani never asks for your OTP, PIN or password.",
+    "ask_more": "Ask something about this message",
+    "ask_hint": "e.g. What is CIF? Which papers do I need?",
+    "ask_send": "Ask",
+    "ask_thinking": "Thinking...",
+    "ask_fallback": "I am not sure about that. Please ask at your bank branch or call {helpline}."
+  },
+  "verdict": {
+    "real": {
+      "headline": "Looks real",
+      "say": "This message looks like it really came from {bank}."
+    },
+    "fake": {
+      "headline": "Fake",
+      "say": "This message is fake. Do not open the link and do not tell anyone your OTP or PIN."
+    },
+    "not_sure": {
+      "headline": "Not sure",
+      "say": "I cannot confirm this message. Do not click anything. Call your bank on the number printed on your card or passbook."
+    }
+  },
+  "reasons": {
+    "asks_secret": "It asks for your OTP, PIN or password. A bank never asks for these.",
+    "remote_app": "It asks you to install a screen-sharing app like AnyDesk. That lets a stranger control your phone.",
+    "apk_file": "The link downloads an app file (.apk). Banks do not send apps by SMS.",
+    "lookalike_link": "The link {link} copies the name of {imitates}, but it is not their website.",
+    "link_not_official": "The link {link} is not on {bank}'s list of official websites.",
+    "link_other_bank": "The link belongs to {owner}, not the bank named in the message.",
+    "suspicious_link": "The link {link} is not a bank website and uses words like '{words}'.",
+    "shortener": "The link is a short link ({link}), which hides where it really goes.",
+    "personal_number_sender": "It came from a normal mobile number ({sender}). Banks send alerts from a bank name like XX-SBIINB.",
+    "promo_header": "It came as a promotion message, not a bank service alert.",
+    "sender_other_bank": "The sender belongs to {owner}, not the bank named in the message.",
+    "sender_unknown": "We do not know this sender name ({sender}).",
+    "call_mobile_number": "It asks you to call a mobile number ({numbers}). Banks give toll-free numbers.",
+    "urgency": "It tries to scare you into hurrying ('{matched}').",
+    "reward_bait": "It promises a prize, refund or cashback to make you click.",
+    "link_official": "The link goes to {bank}'s official website.",
+    "sender_known": "The sender name is one {bank} uses.",
+    "clean": "No red flags. It reads like a normal {bank} alert and has no link.",
+    "no_bank": "The message does not name a bank we know.",
+    "link_from_voice": "You read the link aloud. I can only check a link exactly when you paste it or send a photo.",
+    "asks_secret_llm": "It asks for your OTP, PIN or password. A bank never asks for these.",
+    "model_scam": "Our scam-SMS model, trained on thousands of real scam and normal messages, says this one reads like a scam."
+  },
+  "steps": {
+    "fake": [
+      "Do not open the link.",
+      "Do not reply and do not call any number in the message.",
+      "Delete the message.",
+      "If you want, report it on 1930 or sancharsaathi.gov.in."
+    ],
+    "not_sure": [
+      "Do not click anything yet.",
+      "Call {bank_or_your_bank} on {helpline_or_card}.",
+      "Ask them if this message is from them."
+    ],
+    "rekyc": [
+      "Your bank wants your ID papers again (this is called re-KYC).",
+      "Keep your Aadhaar and PAN ready."
+    ],
+    "rekyc_branch_only": [
+      "Go to your home branch with Aadhaar and PAN.",
+      "Nobody from the bank will ask for OTP for this."
+    ],
+    "mandate_fail": [
+      "An automatic payment (auto-debit) from your account did not go through.",
+      "Keep {amount_or_enough} in the account before the next try.",
+      "If you do not know this payment, call {bank} on {helpline}."
+    ],
+    "card_blocked": [
+      "Your card may be blocked.",
+      "Call {bank} on {helpline} or visit your branch to unblock it.",
+      "Never unblock through a link in an SMS."
+    ],
+    "payment_due": [
+      "A payment is due{deadline_part}{amount_part}.",
+      "Pay through the bank's own app or at the branch, not through an SMS link."
+    ],
+    "transaction": [
+      "Money moved in your account{amount_part}.",
+      "If you did not do this, call {bank} on {helpline} right away."
+    ],
+    "otp_info": [
+      "This is a one-time password for something you are doing.",
+      "If you did not ask for it, do not tell it to anyone, not even a bank caller."
+    ],
+    "generic_real": [
+      "Nothing to worry about. If in doubt, ask at your branch."
+    ]
+  },
+  "channels": {
+    "sms": "Send an SMS to {to}: {body}",
+    "email": "Or email {to} with the subject: {subject}",
+    "portal": "Or fill it on the bank's own page: {url}",
+    "branch": "Or go to your home branch.",
+    "official_app": "Or do it in the official {name} app.",
+    "netbanking": "Or do it in the bank's own net banking."
+  },
+  "clicked": {
+    "title": "Do these now, in this order",
+    "steps": [
+      "Turn on flight mode now. This cuts off anyone controlling your phone.",
+      "If you installed AnyDesk or any app the caller told you to, uninstall it.",
+      "Call your bank on {helpline} and ask them to block your card, UPI and net banking.",
+      "Call 1930 (cyber crime helpline). The sooner you call, the better the chance to stop the money.",
+      "Also file a complaint on cybercrime.gov.in. Keep screenshots of the message.",
+      "Change your UPI PIN and net banking password from a safe phone."
+    ]
+  },
+  "glossary": {
+    "KYC": "your ID papers with the bank",
+    "OTP": "the secret number the bank sends you",
+    "auto-debit": "money the bank cuts automatically",
+    "EMI": "monthly loan payment",
+    "link": "the blue web address"
+  },
+  "bits": {
+    "amount_part": " of Rs {amount}",
+    "deadline_part": ", last date {deadline}",
+    "enough": "enough money",
+    "your_bank": "your bank",
+    "card_number": "the number printed on your card or passbook"
+  }
+}

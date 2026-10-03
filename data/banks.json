@@ -1,0 +1,101 @@
+{
+  "_about": "Official channels for each bank. Every entry must carry a source and the date we checked it. 'verified: false' means we took it from a secondary source or our own phones and still need to confirm it on the bank's own website before the demo.",
+  "banks": [
+    {
+      "id": "indianbank",
+      "name": "Indian Bank",
+      "aliases": ["indian bank", "indianbank", "ind bank"],
+      "domains": ["indianbank.bank.in", "indianbank.in", "indianbank.co.in"],
+      "sender_codes": ["INDBNK", "INDIAN", "IBANKS"],
+      "helpline": "1800 4250 0000",
+      "helpline_verified": true,
+      "procedures": {
+        "rekyc": {
+          "verified": true,
+          "note": "Only when nothing has changed in your KYC details. If anything changed, go to your home branch.",
+          "channels": [
+            {"type": "sms", "to": "9677633000", "body": "REKYC NOCHANGE {cif}"},
+            {"type": "email", "to": "rekyc@indianbank.co.in", "subject": "REKYC NOCHANGE {cif}"},
+            {"type": "portal", "url": "https://apps.indianbank.in/Rekyc/rekyc.aspx"},
+            {"type": "branch"}
+          ]
+        }
+      },
+      "sources": ["https://indianbank.bank.in/en/re-kyc-periodic-update-of-kyc-details"],
+      "checked_on": "2026-09-30"
+    },
+    {
+      "id": "sbi",
+      "name": "State Bank of India",
+      "aliases": ["sbi", "state bank", "state bank of india", "yono"],
+      "domains": ["sbi.bank.in", "sbi.co.in", "onlinesbi.sbi", "sbi"],
+      "sender_codes": ["SBIINB", "SBIBNK", "CBSSBI", "ATMSBI", "SBIPSG", "SBIOTP", "SBIUPI"],
+      "helpline": "1800 1234",
+      "helpline_verified": false,
+      "procedures": {
+        "rekyc": {
+          "verified": false,
+          "channels": [{"type": "official_app", "name": "YONO SBI"}, {"type": "branch"}]
+        }
+      },
+      "sources": ["https://sbi.bank.in/web/customer-care/contact-us"],
+      "checked_on": "2026-09-30"
+    },
+    {
+      "id": "pnb",
+      "name": "Punjab National Bank",
+      "aliases": ["pnb", "punjab national bank", "punjab national"],
+      "domains": ["pnb.bank.in", "pnbindia.in", "netpnb.com"],
+      "sender_codes": ["PNBSMS", "PNBBNK", "PNBOTP"],
+      "helpline": "1800 1800",
+      "helpline_verified": false,
+      "procedures": {
+        "rekyc": {
+          "verified": false,
+          "channels": [{"type": "official_app", "name": "PNB ONE"}, {"type": "branch"}]
+        }
+      },
+      "sources": ["https://pnb.bank.in"],
+      "checked_on": "2026-09-30"
+    },
+    {
+      "id": "hdfc",
+      "name": "HDFC Bank",
+      "aliases": ["hdfc", "hdfc bank"],
+      "domains": ["hdfc.bank.in", "hdfcbank.com", "hdfcbank.bank.in"],
+      "sender_codes": ["HDFCBK", "HDFCBN", "HDFCCC"],
+      "helpline": "1800 202 6161",
+      "helpline_verified": false,
+      "procedures": {
+        "rekyc": {
+          "verified": false,
+          "channels": [{"type": "netbanking"}, {"type": "branch"}]
+        }
+      },
+      "sources": ["https://hdfc.bank.in"],
+      "checked_on": "2026-09-30"
+    },
+    {
+      "id": "icici",
+      "name": "ICICI Bank",
+      "aliases": ["icici", "icici bank"],
+      "domains": ["icici.bank.in", "icicibank.com", "icicibank.bank.in"],
+      "sender_codes": ["ICICIB", "ICICIT", "ICICIO"],
+      "helpline": "1800 1080",
+      "helpline_verified": false,
+      "procedures": {
+        "rekyc": {
+          "verified": false,
+          "channels": [{"type": "official_app", "name": "iMobile"}, {"type": "branch"}]
+        }
+      },
+      "sources": ["https://www.icici.bank.in/contact-us"],
+      "checked_on": "2026-09-30"
+    }
+  ],
+  "national": {
+    "cyber_helpline": "1930",
+    "cyber_portal": "https://cybercrime.gov.in",
+    "report_fraud_sms": "https://sancharsaathi.gov.in"
+  }
+}
